@@ -79,14 +79,14 @@ B+_insert () {
   ### Compile & Run
   #### First Implementation
   ```c
-make bplus1
-./build/bplus_main
+   make bplus1
+   ./build/bplus_main
   ```
 #### Second Implementation
-  ```c
+ ```c
 make bplus2
 ./build/bplus_main
-  ```
+```
 #### Clean Build Files
 ```c
 make clean1  
