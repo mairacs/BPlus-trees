@@ -9,6 +9,14 @@ This project implements a B+ Tree for database indexing. It includes efficient i
 
 ## Data Structures
 ### B+ Tree Metadata (`BPLUS_INFO`)
+Stores general information about the B+ tree file:
+```c
+typedef struct {
+   int height;       // Tree height
+   int root_block;   // Root block ID
+   int num_blocks;   // Total number of blocks (data + index)
+} BPLUS_INFO;
+```
 
 
 
