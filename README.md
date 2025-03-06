@@ -64,6 +64,12 @@ B+_insert () {
 }
 ```
 
+## Assumptions
+1. Balanced Splitting: When splitting a block (data or index), records or keys are evenly distributed while maintaining order.
+2.Duplicate Check Before Insertion: A record is inserted only if it does not already exist in the tree.
+3.Consistent First Data Block: The first data block is always ID = 1, storing the smallest values, simplifying traversal and debugging.
+
+
 
 
 
