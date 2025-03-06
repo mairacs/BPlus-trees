@@ -18,6 +18,51 @@ typedef struct {
 } BPLUS_INFO;
 ```
 
+### Data Block (`BPLUS_DATA_NODE`)
+Stores metadata for data blocks containing records:
+```c
+typedef struct {
+   int records_in_use;  // Number of records in this block
+   int num_records;     // Maximum number of records
+   int next_block;      // Pointer to the next data block
+   int block_id;        // Unique block ID
+} BPLUS_DATA_NODE;
+```
+### Index Block (`BPLUS_INDEX_NODE`)
+Stores metadata for index blocks containing keys:
+```c
+typedef struct {
+   int keys_in_use;      // Number of keys in this index block
+   int block_id;         // Unique block ID
+   int block_parent_id;  // Parent block ID
+} BPLUS_INDEX_NODE;
+```
+
+## B+ Tree Insertion (`B+_insert`)
+```c
+B+_insert () {
+    Case 1 : If the B+ tree is empty
+        Step 1 : Create an index block as the root.
+                 Create two data blocks (left and right of the key).
+
+    Case 2 : If the B+ tree is not empty
+        Step 1 : Traverse the B+ tree to locate the correct data block.
+        Step 2 : Insert the record.
+
+        Case 2.1 : If there is space in the data block, insert the record.
+        Case 2.2 : If the data block is full
+            Step 1 : Split the data block.
+
+            Case 2.2.1 : If the parent index block has space, insert the new key.
+            Case 2.2.2 : If the parent index block is full
+                Step 1 : Split the index block.
+                Step 2 : Repeat until a parent index block with space is found or the root is reached.
+
+                **Special Case:** If the root is full:
+                Step 1 : Split the root.
+                Step 2 : Create a new root.
+}
+```
 
 
 
