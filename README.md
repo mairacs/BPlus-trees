@@ -1,8 +1,8 @@
 # B+ trees in the course of Database Management Systems Implementation
 
 ## Team Information
-Maira Papadopoulou
-Nektarios Pavlakos-Tsimpourakis
+* Maira Papadopoulou
+* Nektarios Pavlakos-Tsimpourakis
 
 ## Project Overview
 This project implements a B+ Tree for database indexing. It includes efficient insertion, data block and index block management, and metadata handling. The implementation follows structured coding practices, ensuring reliability and optimal performance.
@@ -69,7 +69,28 @@ B+_insert () {
 2. Duplicate Check Before Insertion: A record is inserted only if it does not already exist in the tree.
 3. Consistent First Data Block: The first data block is always ID = 1, storing the smallest values, simplifying traversal and debugging.
 
+## Project Highlights
+* Fully implemented B+ Tree with structured indexing.
+* Efficient insertion & splitting methods for large datasets.
+* Successfully tested with 10,000+ records and IDs up to 1,000,000.
+* Memory-leak free implementation verified with Valgrind.
 
-
-
-
+  ## Makefile
+  ### Compile & Run
+  #### First Implementation
+  ```c
+make bplus1
+./build/bplus_main
+  ```
+#### Second Implementation
+  ```c
+make bplus2
+./build/bplus_main
+  ```
+#### Clean Build Files
+```c
+make clean1  
+make clean2  
+```
+### Important
+Always run `make clean` before compiling to ensure proper compilation.
