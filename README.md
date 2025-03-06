@@ -75,15 +75,15 @@ B+_insert () {
 * Successfully tested with 10,000+ records and IDs up to 1,000,000.
 * Memory-leak free implementation verified with Valgrind.
 
-  ## Makefile
-  ### Compile & Run
-  #### First Implementation
-  ```c
-   make bplus1
-   ./build/bplus_main
-  ```
+## Makefile
+### Compile & Run
+#### First Implementation
+```c
+make bplus1
+./build/bplus_main
+```
 #### Second Implementation
- ```c
+```c
 make bplus2
 ./build/bplus_main
 ```
